@@ -1,0 +1,63 @@
+/* Social Media Main Dropdown*/
+.dropdown {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+/*The container div, used for positioning*/
+.dropdownContainer {
+  position: relative;
+  display: inline-block;
+}
+/*Social media dropdown content which is hidden by default*/
+.socialContent {
+  display: none;
+  position: absolute;
+  background-color: #F1F1F1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.shoppingContent {
+  display: none;
+  position: absolute;
+  background-color: #F1F1F1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+/*Links inside the Social media dropdown*/
+.socialContent a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.shoppingContent a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.socialContent a:hover {
+  background-color: #DDD;
+}
+.shoppingContent a:hover {
+  background-color: #DDD;
+}
+
+#socials:hover .socialContent {
+  display: block;
+}
+#shopping:hover .shoppingContent {
+  display: block;
+}
+
+#socials:hover {
+  background-color: #3A8E41;
+}
+#shopping:hover {
+  background-color: #3A8E41;
+}
