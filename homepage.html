@@ -1,8 +1,68 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <style>
+      body {
+        background-image: url("https://i.redd.it/cs1ied67ufi51.png");
+        background-repeat: no-repeat;
+        background-size: 100vw 100vh;
+      }
+      .searchbar {
+        padding: 15px;
+        border-radius: 10px;
+        width: 15vw;
+      }
+      .searchcontainer {
+        position: absolute;
+        left: 2vw;
+        top: 93vh;
+      }
+      /* Social Media Main Dropdown*/
+      .dropbtn {
+        background-color: #000;
+        color: white;
+        padding: 16px;
+        font-size: 12px;
+        border: none;
+        cursor: pointer;
+      }
+      /*The container div, used for positioning*/
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      /*Social media dropdown content which is hidden by default*/
+      .dropdownContent {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #000;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      /*Links inside the Social media dropdown*/
+      .dropdownContent a {
+        color: white;
+        padding: 8px 12px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdownContent a:hover {
+        background-color: #111;
+      }
+
+      .dropdown:hover .dropdownContent {
+        display: block;
+      }
+
+      .dropdown:hover .dropbtn{
+        background-color: #111;
+      }
+    </style>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css.css">
+    <!-- <link rel="stylesheet" href="css.css"> -->
     <title>Homepage</title>
   </head>
   <body>
@@ -24,8 +84,23 @@
     </div>
     <div class="searchcontainer">
       <input id="searchbar" class="searchbar" type="text" name="search" placeholder="Search...">
+      <script type="text/javascript" charset="utf-8">
+        let input = document.getElementById('searchbar');
+        input.addEventListener("keypress", function(event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("searchbtn").click();
+          }
+        });
+      </script>
       <button class="dropbtn" id="searchbtn" onclick="search()">Search</button>
+      <script type="text/javascript" charset="utf-8">
+        function search() {
+          let input = document.getElementById('searchbar').value;
+          url ='http://www.google.com/search?q=' + input;
+          window.open(url,'_blank');
+        }
+      </script>
     </div>
-    <script src="./search.js"></script>
   </body>
 </html>
